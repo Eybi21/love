@@ -1,33 +1,75 @@
-// DeclaracionAmor.js
 import { useState } from "react";
 
 const DeclaracionAmor = () => {
     const [mostrar, setMostrar] = useState(false);
-
+    
     return (
-
-        <div className="flex justify-center items-center h-screen  text-center">
-
-
-            <div className="bg-white p-6 rounded-2xl shadow-xl">
-
-                <h1 className="text-red-500 text-2xl font-bold">Hola, mi negrita ❤️</h1>
-                <p className="text-lg mt-2">Quería decirle algo especial...</p>
+        <div style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "10vh",
+            textAlign: "center",
+            backgroundColor: "#f5f5f5" // Fondo claro
+        }}>
+            <div style={{
+                backgroundColor: "white",
+                padding: "1.5rem",
+                borderRadius: "1rem",
+                boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+                maxWidth: "90%",
+                width: "400px"
+            }}>
+                <h1 style={{
+                    color: "#ef4444", // Color rojo
+                    fontSize: "1.5rem",
+                    fontWeight: "bold"
+                }}>Hola, mi negrita ❤️</h1>
+                
+                <p style={{
+                    fontSize: "1.125rem",
+                    marginTop: "0.5rem"
+                }}>Quería decirle algo especial...</p>
+                
                 <button
-                    className="mt-4 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-pink-400 transition"
+                    style={{
+                        marginTop: "1rem",
+                        padding: "0.5rem 1rem",
+                        backgroundColor: "#ef4444", // Color rojo
+                        color: "white",
+                        borderRadius: "0.5rem",
+                        cursor: "pointer",
+                        border: "none",
+                        transition: "background-color 0.3s"
+                    }}
                     onClick={() => setMostrar(true)}
+                    onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#ec4899"} // Color rosa al hover
+                    onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#ef4444"} // Volver al rojo
                 >
                     Haz clic aquí
                 </button>
+                
                 {mostrar && (
-                    <>
-                        <p className="text-xl mt-4 text-pink-600">La amo con todo mi corazón y la aprecio mucho💖</p>
-                        <img src="/img/Collage dl.png" alt="Imagen amorosa" />
-                    </>
-                )
-
-
-                }
+                    <div style={{ marginTop: "1rem" }}>
+                        <p style={{
+                            fontSize: "1.25rem",
+                            color: "#db2777" // Color rosa
+                        }}>
+                            La amo con todo mi corazón y la aprecio mucho💖
+                        </p>
+                        <img 
+                            src="/col.png"
+                            alt="Imagen de amor" 
+                            style={{
+                                marginTop: "0.5rem",
+                                width: "16rem",
+                                height: "auto",
+                                borderRadius: "0.5rem",
+                                boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)"
+                            }} 
+                        />
+                    </div>
+                )}
             </div>
         </div>
     );
